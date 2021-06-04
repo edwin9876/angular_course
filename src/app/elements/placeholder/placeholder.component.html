@@ -1,0 +1,11 @@
+<div class="ui placeholder">
+    <div *ngIf="hasHeader" class="image header">
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="paragraph">
+        <ng-container *ngFor="let line of lineArray;">
+            <div class="line"></div>
+        </ng-container>
+    </div>
+</div>

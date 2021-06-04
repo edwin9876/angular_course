@@ -1,0 +1,13 @@
+<table [ngClass]='classNames' class="ui celled table">
+    <thead>
+        <tr>
+            <th *ngFor='let header of headers'>{{header.label}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let datum of data">
+            <td *ngFor="let header of headers" data-label="Job">{{datum[header.key]}}</td>
+            <!-- {{datum |json}} -->
+        </tr>
+    </tbody>
+</table>

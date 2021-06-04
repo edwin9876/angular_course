@@ -1,0 +1,30 @@
+<app-divider>
+    <h1>Modal</h1>
+</app-divider>
+<button (click)="onClick()">Show Modal</button>
+
+
+<app-modal (close)='onClick()' *ngIf='isModalOpen'>
+    <ng-container modalTitle> Header</ng-container>
+    <ng-container modalContents>
+        <div class="ui medium image">
+            <img src="https://picsum.photos/200">
+        </div>
+        <div class="description">
+            <div class="ui header">We've auto-chosen a profile image for you.</div>
+            <p>We've grabbed the following image from the <a href="https://www.gravatar.com"
+                    target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+            <p>Is it okay to use this photo?</p>
+        </div>
+    </ng-container>
+    <ng-container modalFooter>
+        <button class="ui button" (click)='onClick()'>Close</button>
+    </ng-container>
+</app-modal>
+
+
+<app-divider>
+    <h1>Accordion</h1>
+</app-divider>
+
+<app-accordion [setItems]='items'></app-accordion>
