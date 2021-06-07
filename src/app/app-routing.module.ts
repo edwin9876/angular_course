@@ -30,6 +30,23 @@ const routes: Routes = [
     loadChildren: () =>
       import('./others/others.module').then((m) => m.OthersModule),
   },
+  {
+    path: 'search-bar',
+    loadChildren: () =>
+      import('./search-bar/search-bar.module').then((m) => m.SearchBarModule),
+  },
+  {
+    path: 'photos',
+    loadChildren: () =>
+      import('./photos/photos.module').then((m) => m.PhotosModule),
+  },
+  {
+    path: 'credit-card',
+    loadChildren: () =>
+      import('./credit-card/credit-card.module').then(
+        (m) => m.CreditCardModule
+      ),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];

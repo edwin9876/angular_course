@@ -1,0 +1,14 @@
+<form (submit)='handleSubmit($event)'>
+    <div *ngIf="!input" class="ui pointing below label">
+        Please enter a value
+    </div>
+    <div>
+        <div class="ui action input">
+
+            <input name='searchBar' placeholder="Search your words" type="text"
+                (input)='handleInput($event.target.value)'>
+            <button type="submit" class="ui button">Search</button>
+
+        </div>
+    </div>
+</form>
