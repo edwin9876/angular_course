@@ -47,6 +47,13 @@ const routes: Routes = [
         (m) => m.CreditCardModule
       ),
   },
+  {
+    path: 'email-client',
+    loadChildren: () =>
+      import('./email-client/email-client.module').then(
+        (m) => m.EmailClientModule
+      ),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];

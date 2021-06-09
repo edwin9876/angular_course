@@ -1,0 +1,8 @@
+.menu {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
