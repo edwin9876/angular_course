@@ -7,10 +7,18 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./card-input.component.css'],
 })
 export class CardInputComponent implements OnInit {
-  @Input() label: string;
-  @Input() inputType: HTMLInputElement['type'] = 'string';
+  @Input() label = '';
+  @Input() inputType: string;
+
   @Input() control: FormControl;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.control);
+  }
+
+  showErrors() {
+    const { dirty, touched, errors } = this.control;
+    return dirty && touched && errors;
+  }
 }

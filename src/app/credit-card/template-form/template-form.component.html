@@ -1,0 +1,24 @@
+<form class='ui form error' (ngSubmit)='handleSubmit()' #emailForm='ngForm'>
+    <div class="field">
+        <label class='ui header'> Enter Email</label>
+        <div class='ui input' [ngClass]='{"error":emailControl.invalid && emailControl.touched}'>
+            <input [attr.data-input-id]='email' pattern="^.+@.+\..+$" required type='email' name='email'
+                [(ngModel)]='email' (input)="handleInput()" #emailControl='ngModel'>
+        </div>
+    </div>
+    <ng-container *ngIf="emailControl.invalid && emailControl.touched">
+        <div class="ui error message" *ngIf="emailControl.errors.required">
+            You must enter an email
+        </div>
+        <div class="ui error message" *ngIf="emailControl.errors.pattern">
+            Please enter a valid email
+        </div>
+    </ng-container>
+    <div class='ui'>
+        <button type='submit' [disabled]='emailControl.invalid'> submit button</button>
+    </div>
+</form>
+<hr />
+
+<div>Is form valid: {{ emailForm.valid }}</div>
+<div>Form values: {{ emailForm.value | json }}</div>

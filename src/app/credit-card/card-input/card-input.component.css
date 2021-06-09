@@ -1,0 +1,9 @@
+.is-danger {
+  color: red;
+}
+
+:host {
+  display: block;
+
+  margin-bottom: 14px;
+}
